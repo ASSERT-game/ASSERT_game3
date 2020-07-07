@@ -1,4 +1,4 @@
-NAME =
+NAME = run_g3
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = -I includes/ -I ~/.brew/include/SDL2/
 SDL_LIB = -L ~/.brew/lib -l SDL2 -l sdl2_image
