@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   texture_id.h                                       :+:      :+:    :+:   */
+/*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 19:59:20 by home              #+#    #+#             */
-/*   Updated: 2020/07/07 18:41:50 by home             ###   ########.fr       */
+/*   Created: 2020/07/07 18:36:16 by home              #+#    #+#             */
+/*   Updated: 2020/07/07 18:46:13 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEXTURE_H
-# define TEXTURE_H
+#include "master.h"
 
-# define NONE (0)
+void	init_player(t_player *dest, int x, int y)
+{
+	dest->vel_x = 0;
+	dest->vel_y = 0;
 
-# define WALL_TRI_TOP	(1)
-# define WALL_TRI_BODY	(17)
+	dest->loc_x = x;
+	dest->loc_y = y;
 
-# define WALL_TOP		(2)
-# define WALL_BODY		(18)
+	dest->animation_id = PLAYER_ID_1;
+}
 
-# define PLAYER_ID_1	(32)
-# define PLAYER_ID_2	(33)
+void	update_player(t_game_context *game_state)
+{
+	t_player *player;
 
-#endif
+	player = &(game_state->player);
+
+	player->animation_id++;
+	if (player->animation_id > PLAYER_ID_2)
+		player->animation_id = PLAYER_ID_1;
+}

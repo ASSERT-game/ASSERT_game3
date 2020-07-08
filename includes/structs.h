@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/06 19:55:12 by home             ###   ########.fr       */
+/*   Updated: 2020/07/07 18:36:00 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ typedef struct	s_display
 	SDL_Renderer	*renderer;
 }				t_display;
 
+typedef struct	s_player
+{
+	int			vel_x;
+	int			vel_y;
+
+	int			loc_x;
+	int			loc_y;
+
+	int			animation_id;
+}				t_player;
+
 typedef struct	s_game_context
 {
 	bool		active;
@@ -32,6 +43,8 @@ typedef struct	s_game_context
 	int			ticks;
 
 	bool		game_over;
+
+	t_player	player;
 
 }				t_game_context;
 

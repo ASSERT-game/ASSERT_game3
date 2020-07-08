@@ -11,6 +11,7 @@ SRC_NAMES = \
 	carve_texture \
 	game_input \
 	main \
+	player \
 	render \
 	SDL_initialize \
 	update \
