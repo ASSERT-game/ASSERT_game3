@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/07 01:22:58 by home             ###   ########.fr       */
+/*   Updated: 2020/07/08 18:14:15 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ typedef struct	s_display
 	SDL_Window		*window;
 	SDL_Renderer	*renderer;
 }				t_display;
+
+typedef struct	s_zombie
+{
+	bool		active;
+
+	int			loc_x;
+	int			loc_y;
+
+	int			animation_id;
+}				t_zombie;
 
 typedef struct	s_player
 {
@@ -44,6 +54,9 @@ typedef struct	s_game_context
 	bool		game_over;
 
 	t_player	player;
+
+	int			zombie_capacity;
+	t_zombie	*zombies;
 
 }				t_game_context;
 

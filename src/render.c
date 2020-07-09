@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 02:38:19 by home              #+#    #+#             */
-/*   Updated: 2020/07/08 04:17:44 by home             ###   ########.fr       */
+/*   Updated: 2020/07/08 18:24:58 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,26 @@ void	draw_player(t_game_context *game_state, t_display *display)
 		SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[player_animation]), &dest);
 }
 
-void	draw_zombie(t_game_context *game_state, t_display *display, int x, int y)
+void	draw_zombie(t_game_context *game_state, t_display *display, t_zombie *zombie)
 {
 	SDL_Rect	dest;
 
 	dest.h = 70;
 	dest.w = 70;
-	dest.x = x;
-	dest.y = y;
-	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[ZOMBIE_ID_1]), &dest);
+	dest.x = zombie->loc_x;
+	dest.y = zombie->loc_y;
+	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[zombie->animation_id]), &dest);
+}
+
+void	draw_horde(t_game_context *game_state, t_display *display)
+{
+	int	i;
+
+	i = 0;
+	while (i < game_state->zombie_capacity)
+	{
+		if (game_state->zombies[i].active == true)
+			draw_zombie(game_state, display, &(game_state->zombies[i]));
+		i++;
+	}
 }

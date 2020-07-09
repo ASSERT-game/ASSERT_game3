@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/08 04:17:40 by home             ###   ########.fr       */
+/*   Updated: 2020/07/08 18:25:43 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,16 @@ void		update_game_state(t_game_context *game_state);
 
 void		draw_tri_wall(t_game_context *game_state, t_display *display, int x, int y);
 void		draw_reg_wall(t_game_context *game_state, t_display *display, int x, int y);
+void		draw_zombie(t_game_context *game_state, t_display *display, t_zombie * zombie);
+
 void		draw_player(t_game_context *game_state, t_display *display);
-void		draw_zombie(t_game_context *game_state, t_display *display, int x, int y);
+void		draw_horde(t_game_context *game_state, t_display *display);
 
 void		update_player(t_game_context *game_state);
 void		init_player(t_player *dest, int x, int y);
+
+void		update_zombie(t_game_context *game_state, t_zombie *zombie);
+void		init_zombie(t_zombie *dest, int x, int y);
 
 // void		itow(int n, SDL_Rect dest, t_display *dislay);
 

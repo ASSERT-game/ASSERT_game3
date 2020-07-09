@@ -15,6 +15,7 @@ SRC_NAMES = \
 	render \
 	SDL_initialize \
 	update \
+	zombie \
 
 # List of all the source files, folders are to be added by
 # including a $(addprefix, DIR_NAME, $(DIR_FILES))
