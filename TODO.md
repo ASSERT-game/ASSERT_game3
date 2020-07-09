@@ -1,2 +1,5 @@
 - [ ] HP System
-
+- [ ] A Weapon
+- [ ] Collisions
+- [ ] Map system
+- [ ] Zombie Attack
