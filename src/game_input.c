@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 11:30:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/10 20:28:52 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 20:55:59 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,29 @@ void	process_user_input(t_game_context *game_state)
 
 	ver_face = 0;
 	hor_face = 0;
+	game_state->player.moving = false;
 	if (keystate[SDL_SCANCODE_W] || keystate[SDL_SCANCODE_UP])
 	{
 		game_state->player.loc_y -= PLAYER_SPEED;
+		game_state->player.moving = true;
 		ver_face = (UP);
 	}
 	if (keystate[SDL_SCANCODE_S] || keystate[SDL_SCANCODE_DOWN])
 	{
 		game_state->player.loc_y += PLAYER_SPEED;
+		game_state->player.moving = true;
 		ver_face = (DOWN);
 	}
 	if (keystate[SDL_SCANCODE_A] || keystate[SDL_SCANCODE_LEFT])
 	{
 		game_state->player.loc_x -= PLAYER_SPEED;
+		game_state->player.moving = true;
 		hor_face = (LEFT);
 	}
 	if (keystate[SDL_SCANCODE_D] || keystate[SDL_SCANCODE_RIGHT])
 	{
 		game_state->player.loc_x += PLAYER_SPEED;
+		game_state->player.moving = true;
 		hor_face = (RIGHT);
 	}
 
@@ -61,6 +66,4 @@ void	process_user_input(t_game_context *game_state)
 		game_state->player.facing = ver_face;
 	else if (hor_face != 0)
 		game_state->player.facing = hor_face;
-
-	printf("Facing: %d\n", game_state->player.facing);
 }

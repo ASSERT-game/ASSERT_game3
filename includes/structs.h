@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/10 20:29:37 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 20:55:22 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ enum			direction
 
 typedef struct	s_player
 {
-	int			facing;
-
 	int			loc_x;
 	int			loc_y;
 
+	int			facing;
+	bool		moving;
 	int			animation_id;
 
 	int			hp;

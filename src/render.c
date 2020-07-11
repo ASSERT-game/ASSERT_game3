@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 02:38:19 by home              #+#    #+#             */
-/*   Updated: 2020/07/10 20:14:09 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 20:52:42 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void	draw_player(t_game_context *game_state, t_display *display)
 	dest.x = (game_state->player.loc_x);
 	dest.y = (game_state->player.loc_y);
 	player_animation = game_state->player.facing + game_state->player.animation_id;
+
+
+	printf("Facing: %d and %d\n", game_state->player.facing, game_state->player.animation_id);
 
 	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[player_animation]), &dest);
 }
