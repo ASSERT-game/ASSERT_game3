@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 18:36:16 by home              #+#    #+#             */
-/*   Updated: 2020/07/07 01:24:23 by home             ###   ########.fr       */
+/*   Updated: 2020/07/08 20:57:49 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	init_player(t_player *dest, int x, int y)
 	dest->animation_id = PLAYER_ID_1;
 
 	dest->facing = 0;
+	dest->hp = 1;
 }
 
 void	update_player(t_game_context *game_state)
@@ -32,4 +33,11 @@ void	update_player(t_game_context *game_state)
 		player->animation_id++;
 	if (player->animation_id > PLAYER_ID_2)
 		player->animation_id = PLAYER_ID_1;
+
+
+	if (game_state->ticks % 20 == 0)
+		player->hp++;
+
+	if (player->hp > 100)
+		player->hp = 100;
 }

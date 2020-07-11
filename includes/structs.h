@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/08 18:14:15 by home             ###   ########.fr       */
+/*   Updated: 2020/07/09 19:32:45 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct	s_player
 	int			loc_y;
 
 	int			animation_id;
+
+	int			hp;
 }				t_player;
 
 typedef struct	s_game_context

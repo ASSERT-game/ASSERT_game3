@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 02:38:19 by home              #+#    #+#             */
-/*   Updated: 2020/07/08 18:24:58 by home             ###   ########.fr       */
+/*   Updated: 2020/07/08 20:58:30 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,37 @@ void	draw_horde(t_game_context *game_state, t_display *display)
 			draw_zombie(game_state, display, &(game_state->zombies[i]));
 		i++;
 	}
+}
+
+void	draw_hp(t_game_context *game_state, t_display *display)
+{
+	SDL_Rect	dest;
+	SDL_Rect	src;
+
+	dest.h = 5;
+	dest.w = 32;
+	dest.x = game_state->player.loc_x + 16;
+	dest.y = game_state->player.loc_y;
+
+	src = game_state->src_rect[UTILS];
+	src.h = 5;
+	src.w = 32;
+	SDL_RenderCopy(display->renderer, game_state->texture, &(src), &dest);
+
+	dest.x++;
+	dest.y++;
+	dest.h = 3;
+	dest.w = (game_state->player.hp * 30) / 100;
+
+	src.x++;
+	src.y += 6;
+	src.h = 3;
+	src.w = 30;
+
+	if (game_state->player.hp < 60)
+		src.y += 4;
+	if (game_state->player.hp < 35)
+		src.y += 4;
+
+	SDL_RenderCopy(display->renderer, game_state->texture, &(src), &dest);
 }

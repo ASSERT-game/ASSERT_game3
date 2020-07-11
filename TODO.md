@@ -1,5 +1,11 @@
-- [ ] HP System
-- [ ] A Weapon
-- [ ] Collisions
-- [ ] Map system
 - [ ] Zombie Attack
+- [ ] Score, Semaphore
+- [ ] A Weapon
+- [ ] HP System
+- [ ] Collisions
+- [ ] 8 Dir Player Sprites
+- [ ] Map system
+
+- [ ] Background
+- [ ] Tile Floor
+- [ ] RanderTarget

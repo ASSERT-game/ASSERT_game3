@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/08 18:30:44 by home             ###   ########.fr       */
+/*   Updated: 2020/07/09 19:17:06 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int	main(void)
 		draw_reg_wall(&game_state, &display, 6, 5);
 		draw_reg_wall(&game_state, &display, 7, 5);
 		draw_tri_wall(&game_state, &display, 8, 5);
+
+		draw_hp(&game_state, &display);
 
 		SDL_RenderPresent(display.renderer);
 		SDL_RenderClear(display.renderer);
