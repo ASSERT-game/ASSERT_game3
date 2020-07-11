@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/09 19:32:45 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 20:29:37 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ typedef struct	s_zombie
 
 	int			animation_id;
 }				t_zombie;
+
+enum			direction
+{
+	NO_DIR,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN,
+};
 
 typedef struct	s_player
 {

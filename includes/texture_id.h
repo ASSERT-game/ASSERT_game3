@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 19:59:20 by home              #+#    #+#             */
-/*   Updated: 2020/07/09 19:16:20 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 20:05:29 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
 # define WALL_TOP		(2)
 # define WALL_BODY		(18)
 
-# define PLAYER_ID_1	(32)
-# define PLAYER_ID_2	(33)
+# define PLAYER_ID_RIGHT	(32)
+# define PLAYER_ID_DOWN		(33)
+# define PLAYER_ID_LEFT		(34)
+# define PLAYER_ID_UP		(35)
+# define PLAYER_ID_UP_LEFT	(36)
+# define PLAYER_ID_UP_RIGHT	(37)
 
 # define ZOMBIE_ID_1	(64)
 # define ZOMBIE_ID_2	(80)
