@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/09 19:17:06 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:11:20 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	game_context_initialize(t_game_context *game_state, t_display *display)
 {
 	game_state->active = true;
+	game_state->game_over = false;
+	game_state->ticks = 0;
 
 	game_state->texture = IMG_LoadTexture(display->renderer, "resources/ASSERT_game3_texture.png");
 	game_state->src_rect = carve_g3_texture();
 
-	game_state->ticks = 0;
-	game_state->game_over = false;
+	init_board(&(game_state->board), &(game_state->width), &(game_state->height));
 
 	init_player(&(game_state->player), 250, 90);
 
@@ -29,8 +30,8 @@ void	game_context_initialize(t_game_context *game_state, t_display *display)
 	bzero(game_state->zombies, sizeof(*(game_state->zombies)) * (game_state->zombie_capacity));
 
 	init_zombie(&(game_state->zombies[0]), 0, 90);
+
 	// srand(time(NULL));
-	(void)display;
 }
 
 int	main(void)

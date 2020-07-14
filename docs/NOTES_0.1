@@ -1,0 +1,37 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    NOTES_0.1                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: home <home@student.42.fr>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/07/13 01:46:29 by home              #+#    #+#              #
+#    Updated: 2020/07/13 22:45:26 by home             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Maps vs non-maps (Game wise)
+
+	A map is a segment of information that has the capability of extracting
+the relative distance in some axis (dimension)...
+
+Was trying to write something to gather my thoughts around collision detection.
+The problem at hand was why use a tile based system over checking each object
+with each other object. I am well aware of how the later grows in something like
+a factorial, I'm guessing it is a combination type growth. However that doesn't
+quite solve the problem. Why does a map work better. The assumption is that
+it doesn't grow in that time. But there is some room for debate here,
+take quadtrees, a really sophisticated and good way to do collision detection,
+they still have to check every object against every other object in their
+respective sections. The things that have been traded here are certain assumptions
+and 'smarter' ways of pruning checking every object with every object. But these
+come with a certain tradeoff and getting ones words around that exact tradeoff
+is difficult.
+
+Anyways this took me down a certain rabbit hole, which made me reconsider
+some of the things I wanted to create. If not at the very least it lead to
+wanting to create a more simple systems, like a box full of objects that just
+bounce off one another. So I am just taking it down a notch, maybe I come
+back to this later, but I have elsewhere to devote my resources to.
+
+Heart of the Code.

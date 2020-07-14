@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/10 20:55:22 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:07:38 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,15 @@ typedef struct	s_player
 typedef struct	s_game_context
 {
 	bool		active;
+	bool		game_over;
+	int			ticks;
 
 	SDL_Texture	*texture;
 	SDL_Rect	*src_rect;
 
-	int			ticks;
-
-	bool		game_over;
+	int			width;
+	int			height;
+	char		**board;
 
 	t_player	player;
 

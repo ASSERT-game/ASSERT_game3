@@ -9,6 +9,7 @@ BIN_DIR = bin/
 # List of all the source files.
 SRC_NAMES = \
 	carve_texture \
+	game_board \
 	game_input \
 	main \
 	player \

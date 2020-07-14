@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/09 19:16:44 by home             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:11:15 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void		SDLU_start(t_display *dest);
 void		SDLU_close(t_display *display);
 
 SDL_Rect	*carve_g3_texture(void);
+
+void		init_board(char ***dest, int *width, int *height);
 
 void		process_user_input(t_game_context *game_state);
 void		update_game_state(t_game_context *game_state);
